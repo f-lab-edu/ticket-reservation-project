@@ -6,4 +6,8 @@ import java.time.LocalDateTime
 data class PerformanceDateTime(
     val startDateTime: LocalDateTime,
     val endDateTime: LocalDateTime
-)
+){
+    init {
+        require(startDateTime.isBefore(endDateTime)){ "startDateTime 은 endDateTime 보다 작아야 합니다." }
+    }
+}
