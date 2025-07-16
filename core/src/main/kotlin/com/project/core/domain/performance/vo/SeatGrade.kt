@@ -1,5 +1,8 @@
 package com.project.core.domain.performance.vo
 
-data class SeatGrade(
-    val grade: String
-)
+enum class SeatGrade {
+    VIP,
+    ROYAL,
+    SUPERIOR,
+    A_GRADE
+}

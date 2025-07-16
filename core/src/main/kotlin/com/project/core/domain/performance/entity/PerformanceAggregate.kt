@@ -7,7 +7,7 @@ class PerformanceAggregate(
     val performanceId: Long,
     val performanceInfo: PerformanceBaseInfo,
     val performanceDetails: List<PerformanceDetail>,
-    val seats: List<Seat>,
+    val seat: Seat,
     val performanceStatus: PerformanceStatus
 ){
 
