@@ -1,0 +1,14 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: message-service
+  
+  profiles:
+    active: local
+
+logging:
+  level:
+    com.project.message: DEBUG
+    org.springframework.web: DEBUG
