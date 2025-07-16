@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: api-service
+  
+  profiles:
+    active: local
+
+logging:
+  level:
+    com.project.api: DEBUG
+    org.springframework.web: DEBUG
