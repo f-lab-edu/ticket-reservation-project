@@ -4,11 +4,11 @@ import com.project.core.domain.performance.vo.PerformanceBaseInfo
 import com.project.core.domain.performance.vo.PerformanceStatus
 
 class PerformanceAggregate(
-    val performanceId: Long,
-    val performanceInfo: PerformanceBaseInfo,
-    val performanceDetails: List<PerformanceDetail>,
-    val seat: Seat,
-    val performanceStatus: PerformanceStatus
+    var performanceId: Long? = null,
+    var performanceInfo: PerformanceBaseInfo,
+    var performanceDetails: List<PerformanceDetail> = emptyList(),
+    var seat: Seat,
+    var performanceStatus: PerformanceStatus
 ){
 
 }

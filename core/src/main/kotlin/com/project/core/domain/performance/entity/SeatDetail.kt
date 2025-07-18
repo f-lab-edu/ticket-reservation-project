@@ -5,7 +5,7 @@ import com.project.core.domain.performance.vo.SeatNumber
 import com.project.core.domain.performance.vo.SeatPrice
 
 class SeatDetail(
-    val seatNumber: SeatNumber,
-    val seatGrade: SeatGrade,
-    val seatPrice: SeatPrice
+    var seatNumber: SeatNumber,
+    var seatGrade: SeatGrade,
+    var seatPrice: SeatPrice
 )

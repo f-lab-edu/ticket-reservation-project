@@ -6,8 +6,8 @@ import com.project.core.domain.performance.vo.SeatNumber
 import com.project.core.domain.performance.vo.SeatPrice
 
 class Seat(
-    val performanceId: Long,
-    val seatId: Long,
-    val seatGradePolicies: List<SeatGradePolicy>,
-    val seatDetails: List<SeatDetail>
+    var performanceId: Long?= null,
+    var seatId: Long ?= null,
+    var seatGradePolicies: List<SeatGradePolicy>,
+    var seatDetails: List<SeatDetail> = emptyList()
 )
