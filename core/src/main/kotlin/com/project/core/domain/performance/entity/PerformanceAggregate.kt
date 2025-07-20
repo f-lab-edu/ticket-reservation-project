@@ -11,18 +11,22 @@ class PerformanceAggregate(
     private var performanceStatus: PerformanceStatus = PerformanceStatus.DRAFT
 ){
 
+    //공연 기본정보 수정
     fun modifyPerformanceInfo(performanceInfo: PerformanceBaseInfo) {
         this.performanceInfo = performanceInfo
     }
 
+    //공연 상세정보 추가
     fun addPerformanceDetail(performanceDetail: PerformanceDetail) {
         this.performanceDetails.add(performanceDetail)
     }
 
+    //공연 상세정보 삭제
     fun deletePerformanceDetail(performanceDetailId: Long) {
         this.performanceDetails.removeIf { it.performanceDetailId == performanceDetailId }
     }
 
+    //공연 활성 상태 변경
     fun activatePerformance() {
 
         require(this.performanceStatus == PerformanceStatus.DRAFT || this.performanceStatus == PerformanceStatus.INACTIVE) {
@@ -32,6 +36,7 @@ class PerformanceAggregate(
         this.performanceStatus = PerformanceStatus.ACTIVE
     }
 
+    //공연 비활성 상태 변경
     fun inactivatePerformance() {
 
         require(this.performanceStatus == PerformanceStatus.ACTIVE) {
@@ -41,6 +46,7 @@ class PerformanceAggregate(
         this.performanceStatus = PerformanceStatus.INACTIVE
     }
 
+    //공연 완료 상태 변경
     fun completePerformance() {
 
         require(this.performanceStatus == PerformanceStatus.ACTIVE) {
