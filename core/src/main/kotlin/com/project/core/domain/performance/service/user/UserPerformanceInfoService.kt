@@ -4,6 +4,7 @@ import com.project.core.domain.common.vo.PagedResult
 import com.project.core.domain.performance.entity.PerformanceAggregate
 import com.project.core.domain.performance.entity.PerformanceDetail
 import com.project.core.domain.performance.entity.Seat
+import com.project.core.domain.performance.entity.SeatDetail
 import com.project.core.domain.performance.repository.UserPerformanceRepository
 import com.project.core.domain.performance.vo.PerformanceDateTime
 import java.time.LocalDateTime
@@ -44,8 +45,11 @@ class UserPerformanceInfoService(
         return userPerformanceRepository.findByPerformanceDetailId(performanceDetailId)
     }
 
-    fun getSeats(performanceId: Long): Seat {
+    fun getSeats(performanceId: Long): Seat? {
         return userPerformanceRepository.findSeatByPerformanceId(performanceId)
     }
 
+    fun getSeatDetail(seatDetailId: Long): SeatDetail? {
+        return userPerformanceRepository.findSeatDetailById(seatDetailId)
+    }
 }

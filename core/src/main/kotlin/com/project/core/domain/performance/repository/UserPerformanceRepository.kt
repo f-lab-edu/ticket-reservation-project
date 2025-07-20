@@ -4,6 +4,7 @@ import com.project.core.domain.common.vo.PagedResult
 import com.project.core.domain.performance.entity.PerformanceAggregate
 import com.project.core.domain.performance.entity.PerformanceDetail
 import com.project.core.domain.performance.entity.Seat
+import com.project.core.domain.performance.entity.SeatDetail
 import java.time.LocalDateTime
 
 interface UserPerformanceRepository {
@@ -22,5 +23,7 @@ interface UserPerformanceRepository {
 
     fun findByPerformanceDetailId(id: Long): PerformanceDetail?
 
-    fun findSeatByPerformanceId(id: Long): Seat
+    fun findSeatByPerformanceId(id: Long): Seat?
+
+    fun findSeatDetailById(seatDetailId: Long): SeatDetail?
 }
