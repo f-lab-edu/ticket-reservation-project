@@ -23,6 +23,6 @@ class Seat(
     var seatGradePolicies: MutableList<SeatGradePolicy>? = mutableListOf(),
 
     @OneToMany(mappedBy = "seat")
-    var seatDetails: MutableList<SeatDetail> = mutableListOf(),
+    var seatDetails: MutableList<SeatDetail>? = mutableListOf(),
 
 )
