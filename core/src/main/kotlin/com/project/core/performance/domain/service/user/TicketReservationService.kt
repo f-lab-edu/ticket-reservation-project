@@ -1,26 +1,27 @@
 package com.project.core.performance.domain.service.user
 
 import com.project.core.performance.domain.entity.Ticket
+import com.project.core.performance.domain.repository.TicketReservationRepository
 import com.project.core.performance.domain.vo.SeatNumber
 import com.project.core.performance.domain.vo.TicketStatus
 
 class TicketReservationService(
-    private val ticketReservationRepository: com.project.core.performance.domain.repository.TicketReservationRepository
+    private val ticketReservationRepository: TicketReservationRepository
 ) {
 
-    fun getAllAvailableTicketsInfo(performanceDetailId: Long): List<com.project.core.performance.domain.entity.Ticket>?{
+    fun getAllAvailableTicketsInfo(performanceDetailId: Long): List<Ticket>?{
         return ticketReservationRepository.findAllTicketsWhereIsAvailable(performanceDetailId)
     }
 
-    fun getTicket(performanceDetailId: Long, seatNumber: com.project.core.performance.domain.vo.SeatNumber): com.project.core.performance.domain.entity.Ticket? {
+    fun getTicket(performanceDetailId: Long, seatNumber: SeatNumber): Ticket? {
         return ticketReservationRepository.findTicketByPerformanceDetailIdAndSeatNumber(performanceDetailId, seatNumber)
     }
 
-    fun getTickets(performanceDetailId: Long, seatNumbers: List<com.project.core.performance.domain.vo.SeatNumber>): List<com.project.core.performance.domain.entity.Ticket>? {
+    fun getTickets(performanceDetailId: Long, seatNumbers: List<SeatNumber>): List<Ticket>? {
         return ticketReservationRepository.findTicketsByPerformanceDetailIdAndIsInSeatNumbers(performanceDetailId, seatNumbers)
     }
 
-    fun reserveTicket(performanceDetailId: Long, seatNumber: com.project.core.performance.domain.vo.SeatNumber): com.project.core.performance.domain.entity.Ticket? {
+    fun reserveTicket(performanceDetailId: Long, seatNumber: SeatNumber): Ticket? {
 
         val ticket = this.getTicket(performanceDetailId, seatNumber)?: throw Exception("티켓 정보가 올바르지 않습니다.")
 

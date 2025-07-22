@@ -1,7 +1,7 @@
 package com.project.core.performance.domain.service.user
 
 import com.project.core.common.vo.PagedResult
-import com.project.core.performance.domain.entity.PerformanceAggregate
+import com.project.core.performance.domain.entity.Performance
 import com.project.core.performance.domain.entity.PerformanceDetail
 import com.project.core.performance.domain.entity.Seat
 import com.project.core.performance.domain.entity.SeatDetail
@@ -14,11 +14,11 @@ class UserPerformanceInfoService(
     private val userPerformanceRepository: UserPerformanceRepository,
 ) {
 
-    fun listPerformances(cursor: String?, size: Int): PagedResult<PerformanceAggregate>? {
+    fun listPerformances(cursor: String?, size: Int): PagedResult<Performance>? {
         return userPerformanceRepository.findPerformanceCursorWhereIsActive()
     }
 
-    fun getPerformance(performanceId: Long): PerformanceAggregate? {
+    fun getPerformance(performanceId: Long): Performance? {
         return userPerformanceRepository.findByPerformanceId(performanceId)
     }
 

@@ -1,5 +1,8 @@
 package com.project.core.performance.domain.vo
 
+import jakarta.persistence.Embeddable
+
+@Embeddable
 data class SeatNumber(
     val area: String,
     val number: Int

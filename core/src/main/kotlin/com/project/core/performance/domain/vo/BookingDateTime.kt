@@ -1,8 +1,10 @@
 package com.project.core.performance.domain.vo
 
+import jakarta.persistence.Embeddable
 import java.time.LocalDateTime
 
 // 예매 시작 시간, 예매 종료 시간에 대한 정보
+@Embeddable
 data class BookingDateTime(
     val startDateTime: LocalDateTime,
     val endDateTime: LocalDateTime

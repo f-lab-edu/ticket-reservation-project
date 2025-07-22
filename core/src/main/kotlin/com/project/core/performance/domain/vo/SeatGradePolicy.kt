@@ -1,7 +1,9 @@
 package com.project.core.performance.domain.vo
 
+import jakarta.persistence.Embeddable
 import java.math.BigDecimal
 
+@Embeddable
 data class SeatGradePolicy(
     val seatGrade: SeatGrade,
     val seatPrice: SeatPrice,

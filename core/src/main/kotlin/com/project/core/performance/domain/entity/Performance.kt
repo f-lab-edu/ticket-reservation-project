@@ -1,15 +1,18 @@
 package com.project.core.performance.domain.entity
 
 import com.project.core.performance.domain.vo.PerformanceBaseInfo
+import com.project.core.performance.domain.vo.PerformanceStatus
 import com.project.core.performance.domain.vo.PerformanceStatus.*
+import jakarta.persistence.Entity
+import jakarta.persistence.Enumerated
 
-
-class PerformanceAggregate(
+@Entity
+class Performance(
     var performanceId: Long? = null,
     var performanceInfo: PerformanceBaseInfo,
     var performanceDetails: MutableList<PerformanceDetail> = mutableListOf(),
     var seat: Seat,
-    private var performanceStatus: com.project.core.performance.domain.vo.PerformanceStatus = DRAFT
+    private var performanceStatus: PerformanceStatus = DRAFT
 ){
 
     //공연 기본정보 수정
