@@ -3,8 +3,10 @@ package com.project.core.performance.domain.entity
 import com.project.core.performance.domain.vo.BookingDateTime
 import com.project.core.performance.domain.vo.PerformanceDateTime
 import com.project.core.performance.domain.vo.PerformanceDetailStatus
+import jakarta.persistence.Entity
 import java.time.LocalDateTime
 
+@Entity
 class PerformanceDetail(
     var performanceId: Long,
     var performanceDetailId: Long,

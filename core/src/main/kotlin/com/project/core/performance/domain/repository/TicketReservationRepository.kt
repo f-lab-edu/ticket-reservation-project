@@ -1,9 +1,5 @@
 package com.project.core.performance.domain.repository
 
-import com.project.core.performance.domain.entity.PerformanceDetail
-import com.project.core.performance.domain.entity.Ticket
-import com.project.core.performance.domain.vo.SeatNumber
-
 interface TicketReservationRepository {
 
     fun save(ticket: com.project.core.performance.domain.entity.Ticket): com.project.core.performance.domain.entity.Ticket?

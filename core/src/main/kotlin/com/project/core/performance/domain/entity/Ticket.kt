@@ -1,10 +1,6 @@
 package com.project.core.performance.domain.entity
 
-import com.project.core.performance.domain.vo.PerformanceBaseInfo
-import com.project.core.performance.domain.vo.SeatGrade
-import com.project.core.performance.domain.vo.SeatNumber
-import com.project.core.performance.domain.vo.SeatPrice
-import com.project.core.performance.domain.vo.TicketStatus
+import com.project.core.performance.domain.vo.*
 
 class Ticket(
     var ticketId: Long,

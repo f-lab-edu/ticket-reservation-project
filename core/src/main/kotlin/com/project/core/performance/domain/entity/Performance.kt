@@ -3,15 +3,34 @@ package com.project.core.performance.domain.entity
 import com.project.core.performance.domain.vo.PerformanceBaseInfo
 import com.project.core.performance.domain.vo.PerformanceStatus
 import com.project.core.performance.domain.vo.PerformanceStatus.*
+import jakarta.persistence.Embedded
 import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.OneToMany
+import jakarta.persistence.OneToOne
 
 @Entity
 class Performance(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var performanceId: Long? = null,
+
+    @Embedded
     var performanceInfo: PerformanceBaseInfo,
+
+    @OneToMany
+    @JoinColumn(name = "performancedetail_id")
     var performanceDetails: MutableList<PerformanceDetail> = mutableListOf(),
+
+    @OneToOne
     var seat: Seat,
+
+    @Enumerated(value = EnumType.STRING)
     private var performanceStatus: PerformanceStatus = DRAFT
 ){
 
