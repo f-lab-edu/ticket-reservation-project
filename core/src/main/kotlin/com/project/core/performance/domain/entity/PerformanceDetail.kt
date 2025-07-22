@@ -3,16 +3,39 @@ package com.project.core.performance.domain.entity
 import com.project.core.performance.domain.vo.BookingDateTime
 import com.project.core.performance.domain.vo.PerformanceDateTime
 import com.project.core.performance.domain.vo.PerformanceDetailStatus
+import jakarta.persistence.Embedded
 import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.ManyToOne
+import jakarta.persistence.OneToMany
 import java.time.LocalDateTime
 
 @Entity
 class PerformanceDetail(
-    var performanceId: Long,
-    var performanceDetailId: Long,
+
+    @ManyToOne
+    @JoinColumn(name = "performance_id")
+    var performance: Performance,
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var performanceDetailId: Long? = null,
+
+    @Embedded
     var performanceDateTime: PerformanceDateTime,
+
+    @Embedded
     var bookingDateTime: BookingDateTime,
+
+    @Enumerated(value = EnumType.STRING)
     var status: PerformanceDetailStatus,
+
+    @OneToMany(mappedBy = "performanceDetail")
     var tickets: List<Ticket> = emptyList(),
 ){
     // 공연 시간 이전 확인 메서드
