@@ -8,6 +8,7 @@ import com.project.core.performance.domain.repository.PerformanceDetailRepositor
 import com.project.core.performance.domain.repository.PerformanceRepository
 import com.project.core.performance.domain.vo.BookingDateTime
 import com.project.core.performance.domain.vo.PerformanceDateTime
+import com.project.core.performance.domain.vo.PerformanceStatus
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
@@ -58,5 +59,12 @@ class UserPerformanceServiceImpl(
         TODO("Not yet implemented")
     }
 
+    override fun getPerformanceStatus(performanceId: Long): PerformanceStatus {
+        TODO("Not yet implemented")
+    }
+
+    override fun getPerformanceDetailStatus(performanceDetailId: Long): PerformanceStatus {
+        TODO("Not yet implemented")
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.project.core.performance.domain.service.user
 
 import com.project.core.performance.domain.entity.Seat
+import com.project.core.performance.domain.entity.SeatDetail
 import com.project.core.performance.domain.entity.SeatGradePolicy
 import com.project.core.performance.domain.vo.SeatGrade
 import com.project.core.performance.domain.vo.SeatNumber
@@ -14,6 +15,12 @@ interface UserSeatService {
     fun getSeatGradePolicy(seatId: Long): List<SeatGradePolicy>
 
     fun getSeatDetails(seatId: Long): Seat
+
+    fun getSeatDetailById(seatDetailId: Long): SeatDetail
+
+    fun getSeatDetailByNumber(seatNumber: SeatNumber): SeatDetail
+
+    fun getSeatDetailByGrade(seatGrade: SeatGrade): List<SeatDetail>
 
     fun getSeatGradeTotalCount(seatGradePolicyId: Long): Int
 

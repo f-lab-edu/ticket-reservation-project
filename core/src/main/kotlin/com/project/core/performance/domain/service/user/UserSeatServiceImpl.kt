@@ -1,6 +1,7 @@
 package com.project.core.performance.domain.service.user
 
 import com.project.core.performance.domain.entity.Seat
+import com.project.core.performance.domain.entity.SeatDetail
 import com.project.core.performance.domain.entity.SeatGradePolicy
 import com.project.core.performance.domain.repository.SeatDetailRepository
 import com.project.core.performance.domain.repository.SeatGradePolicyRepository
@@ -26,6 +27,18 @@ class UserSeatServiceImpl(
     }
 
     override fun getSeatDetails(seatId: Long): Seat {
+        TODO("Not yet implemented")
+    }
+
+    override fun getSeatDetailById(seatDetailId: Long): SeatDetail {
+        TODO("Not yet implemented")
+    }
+
+    override fun getSeatDetailByNumber(seatNumber: SeatNumber): SeatDetail {
+        TODO("Not yet implemented")
+    }
+
+    override fun getSeatDetailByGrade(seatGrade: SeatGrade): List<SeatDetail> {
         TODO("Not yet implemented")
     }
 

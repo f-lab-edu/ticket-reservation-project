@@ -6,6 +6,7 @@ import com.project.core.performance.domain.entity.PerformanceDetail
 import com.project.core.performance.domain.entity.Seat
 import com.project.core.performance.domain.vo.BookingDateTime
 import com.project.core.performance.domain.vo.PerformanceDateTime
+import com.project.core.performance.domain.vo.PerformanceStatus
 import java.time.LocalDateTime
 
 //사용자 측면 공연 정보 조회 도메인 서비스
@@ -37,5 +38,9 @@ interface UserPerformanceService {
     fun isPerformanceDetailBookable(performanceDetailId: Long): Boolean
 
     fun getSeatByPerformanceId(performanceId: Long): Seat
+
+    fun getPerformanceStatus(performanceId: Long): PerformanceStatus
+
+    fun getPerformanceDetailStatus(performanceDetailId: Long): PerformanceStatus
 
 }
