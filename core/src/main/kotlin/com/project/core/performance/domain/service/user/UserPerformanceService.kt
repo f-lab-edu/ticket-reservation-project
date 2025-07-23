@@ -20,27 +20,11 @@ interface UserPerformanceService {
     // 공연 리스트 조회 (페이징)
     fun getPerformancesPaged(cursor: String?, size: Int): PagedResult<Performance>
 
-    // 공연 상세 단일 조회
-    fun getPerformanceDetail(performanceDetailId: Long): PerformanceDetail
-
-    fun getPerformanceDateTime(performanceDetailId: Long): PerformanceDateTime
-
-    fun getBookingDateTime(performanceDetailId: Long): BookingDateTime
-
-    // 공연 상세 리스트 조회 (공연 날짜 기준)
-    fun getPerformanceDetailsByTime(
-        performanceId: Long,
-        startDateTime: LocalDateTime,
-        endDateTime: LocalDateTime
-    ): List<PerformanceDetail>
-
-    // 공연 예매 가능 여부 조회
-    fun isPerformanceDetailBookable(performanceDetailId: Long): Boolean
 
     fun getSeatByPerformanceId(performanceId: Long): Seat
 
     fun getPerformanceStatus(performanceId: Long): PerformanceStatus
 
-    fun getPerformanceDetailStatus(performanceDetailId: Long): PerformanceStatus
+
 
 }

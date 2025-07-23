@@ -1,9 +1,14 @@
 package com.project.core.performance.domain.service.user
 
 import com.project.core.performance.domain.entity.Ticket
+import com.project.core.performance.domain.repository.TicketRepository
 import com.project.core.performance.domain.vo.TicketStatus
+import org.springframework.stereotype.Service
 
-class TicketReservationServiceImpl : TicketReservationService {
+@Service
+class UserTicketReservationServiceImpl(
+    private val ticketRepository: TicketRepository
+) : UserTicketReservationService {
     override fun getTicket(ticketId: Long): Ticket {
         TODO("Not yet implemented")
     }

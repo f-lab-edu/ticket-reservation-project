@@ -3,7 +3,7 @@ package com.project.core.performance.domain.service.user
 import com.project.core.performance.domain.entity.Ticket
 import com.project.core.performance.domain.vo.TicketStatus
 
-interface TicketReservationService {
+interface UserTicketReservationService {
 
     fun getTicket(ticketId: Long): Ticket
 

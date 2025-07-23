@@ -15,8 +15,7 @@ import java.time.LocalDateTime
 
 @Service
 class UserPerformanceServiceImpl(
-    private val performanceRepository: PerformanceRepository,
-    private val performanceDetailRepository: PerformanceDetailRepository
+    private val performanceRepository: PerformanceRepository
 ): UserPerformanceService {
 
     override fun getPerformance(performanceId: Long): Performance {
@@ -31,39 +30,11 @@ class UserPerformanceServiceImpl(
         TODO("Not yet implemented")
     }
 
-    override fun getPerformanceDetail(performanceDetailId: Long): PerformanceDetail {
-        TODO("Not yet implemented")
-    }
-
-    override fun getPerformanceDateTime(performanceDetailId: Long): PerformanceDateTime {
-        TODO("Not yet implemented")
-    }
-
-    override fun getBookingDateTime(performanceDetailId: Long): BookingDateTime {
-        TODO("Not yet implemented")
-    }
-
-    override fun getPerformanceDetailsByTime(
-        performanceId: Long,
-        startDateTime: LocalDateTime,
-        endDateTime: LocalDateTime
-    ): List<PerformanceDetail> {
-        TODO("Not yet implemented")
-    }
-
-    override fun isPerformanceDetailBookable(performanceDetailId: Long): Boolean {
-        TODO("Not yet implemented")
-    }
-
     override fun getSeatByPerformanceId(performanceId: Long): Seat {
         TODO("Not yet implemented")
     }
 
     override fun getPerformanceStatus(performanceId: Long): PerformanceStatus {
-        TODO("Not yet implemented")
-    }
-
-    override fun getPerformanceDetailStatus(performanceDetailId: Long): PerformanceStatus {
         TODO("Not yet implemented")
     }
 
